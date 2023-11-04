@@ -7,9 +7,9 @@ test.describe('Windowed notebook support', () => {
       ...galata.DEFAULT_SETTINGS,
       '@jupyterlab/notebook-extension:tracker': {
         ...galata.DEFAULT_SETTINGS['@jupyterlab/notebook-extension:tracker'],
-        windowingMode: 'full'
-      }
-    }
+        windowingMode: 'full',
+      },
+    },
   });
   test.beforeEach(openNotebook('100_code_cells.ipynb'));
   test.afterEach(cleanup);

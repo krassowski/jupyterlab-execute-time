@@ -12,9 +12,9 @@ test.describe('Timing outcomes', () => {
       ...galata.DEFAULT_SETTINGS,
       [SETTINGS_ID]: {
         ...galata.DEFAULT_SETTINGS[SETTINGS_ID],
-        highlight: false
-      }
-    }
+        highlight: false,
+      },
+    },
   });
 
   test('"Execution started at" state', async ({ page }) => {
@@ -25,7 +25,9 @@ test.describe('Timing outcomes', () => {
 
     const widget = await cell.waitForSelector('.execute-time');
     expect(await widget.textContent()).toContain('Execution started at');
-    expect(await maskedScreenshot(widget)).toMatchSnapshot('execution-started.png');
+    expect(await maskedScreenshot(widget)).toMatchSnapshot(
+      'execution-started.png'
+    );
   });
 
   test('"Last executed at" state', async ({ page }) => {
@@ -48,7 +50,7 @@ test.describe('Timing outcomes', () => {
     await page.keyboard.press('Control+Enter');
 
     // Expect and accept a dialog confirming that kernel died (and restarted)
-    await acceptDialog(page, 'Kernel Restarting')
+    await acceptDialog(page, 'Kernel Restarting');
 
     const widget = await cell.$('.execute-time');
     expect(await widget.textContent()).toContain('Failed');
