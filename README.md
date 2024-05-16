@@ -9,6 +9,8 @@ Display cell timings in Jupyter Lab
 
 This is inspired by the notebook version [here](https://github.com/ipython-contrib/jupyter_contrib_nbextensions/blob/master/src/jupyter_contrib_nbextensions/nbextensions/execute_time).
 
+test
+
 ## Requirements
 
 - JupyterLab >= 3.0
